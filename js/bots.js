@@ -34,6 +34,6 @@ outerBot.executeCommand =  function(data) {
     outerBot.version = message.substring(11);
   }
   if (message.startsWith("setname ")) {
-    outerBot.bot_username = message.substring(8);
+    outerBot.name = message.substring(8);
   }
 }
