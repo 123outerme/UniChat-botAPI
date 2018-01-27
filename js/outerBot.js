@@ -10,7 +10,12 @@ outerBot.executeCommand =  function(data) {
   var raw_timestamp = data.rawTimestamp;
   const versionNum = 1.0;
   if (message.startsWith("throw "))
-    outerBot.respond(poster + " throws " + rawMessage.substring(7) + " away.");
+  {
+	  if (message.substring(6, 14) == "outerbot")
+		  outerBot.respond("You can't pick me up, " + poster + ", I'm too heavy.");
+		else
+		  outerBot.respond(poster + " throws " + rawMessage.substring(7) + " away.");
+  }
   if (message.startsWith("promote ")) {
     var randMessage = ["a thing that exists that you can find.", "absolutely fantastic!", "pitifully mediocre.", "not worthy of this message.", "so perfect it will make you hate reality."];
     var randSubject = ["product", "service", "idea", "religion", "corporate money grab"];
@@ -19,10 +24,10 @@ outerBot.executeCommand =  function(data) {
     outerBot.respond(poster + "'s new " + randSubject[randNumber2] + ", " + rawMessage.substring(9) + ", is " + randMessage[randNumber1]);
   }
   if (message.startsWith("destroy ")) {
-    if (message.substring(9,16) != "outerbot")
-      outerBot.respond(poster + " destroys " + rawMessage.substring(9) + ".");
-    else
+    if (message.substring(8,16) == "outerbot")
       outerBot.respond("Nice try, " + poster + ", but I'm invulnerable.");
+	else
+      outerBot.respond(poster + " destroys " + rawMessage.substring(9) + ".");
   }
   if (message == "status" || message == "version")
     outerBot.respond((poster == "123outerme" ? "Welcome back, sir. " : "") + "At version " + outerBot.version + ", I am fully operational." + (Math.floor(Math.random() * 3) == 1 ? " Probably." : ""));
@@ -31,5 +36,5 @@ outerBot.executeCommand =  function(data) {
     outerBot.respond(poster + " says \"" + rawMessage.substring(9) + "\" sarcastically.");
     
   if (message.startsWith("echo"))
-    outerBot.respond(rawMessage.substring(4));
+    outerBot.respond(rawMessage.substring(5));
 }
