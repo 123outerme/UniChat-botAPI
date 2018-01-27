@@ -33,4 +33,10 @@ outerBot.executeCommand =  function(data) {
   if (message == "status") {
     outerBot.respond((poster == "123outerme" ? "Welcome back, sir. " : "") + "At version " + outerBot.version + ", I am fully operational." + (Math.floor(Math.random() * 3) == 1 ? " Probably." : ""));
   }
+  if (message.startsWith("sarcasm ")) {
+    outerBot.respond(poster + " says \"" + rawMessage.substring(8) + "\" sarcastically.");
+  }
+  if (message == "infinite") {
+    outerBot.respond("|infinite");
+  }
 }
