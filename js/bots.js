@@ -7,6 +7,8 @@ function initializeBots() {
 }
 
 outerBot.executeCommand =  function(data) {
+  //load version number from outerBotVersion.txt dynamically. It's a mess, don't ask how it works, but it does.
+  var xhr=new XMLHttpRequest;xhr.onreadystatechange=function(){if(4==xhr.readyState){outerBot.version=xhr.responseText}},xhr.open("GET","https://123outerme.github.io/UniChat-botAPI/outerBotVersion.txt",!0),xhr.send();
   //This code initializes the variables:
   var poster = data.poster;
   var message = data.message;
