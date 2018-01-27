@@ -1,6 +1,6 @@
 //Demo/example code.
 
-var outerBot = new Bot("outerBot", "|");
+var outerBot = new Bot("outerBot", "|", "1.1");
 
 function initializeBots() {
   outerBot.register();
@@ -28,6 +28,6 @@ outerBot.executeCommand =  function(data) {
     outerBot.respond(poster + " destroys " + rawMessage.substring(9) + ".");
   }
   if (message == "status") {
-    outerBot.respond((poster == "123outerme" ? "Welcome back, sir. " : "") + "At version " + versionNum + ", I am fully operational." + (Math.floor(Math.random() * 3) == 1 ? " Probably." : ""));
+    outerBot.respond((poster == "123outerme" ? "Welcome back, sir. " : "") + "At version " + outerBot.version + ", I am fully operational." + (Math.floor(Math.random() * 3) == 1 ? " Probably." : ""));
   }
 }
