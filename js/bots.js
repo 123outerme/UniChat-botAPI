@@ -30,4 +30,10 @@ outerBot.executeCommand =  function(data) {
   if (message == "status") {
     outerBot.respond((poster == "123outerme" ? "Welcome back, sir. " : "") + "At version " + outerBot.version + ", I am fully operational." + (Math.floor(Math.random() * 3) == 1 ? " Probably." : ""));
   }
+  if (message.startsWith("setversion ")) {
+    outerBot.version = message.substring(11);
+  }
+  if (message.startsWith("setname ")) {
+    outerBot.bot_username = message.substring(8);
+  }
 }
