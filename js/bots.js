@@ -15,7 +15,6 @@ outerBot.executeCommand =  function(data) {
   var timestamp = data.timestamp;
   var raw_timestamp = data.rawTimestamp;
   const var versionNum = 1.0;
-  //if the first 4 characters of the message (starting from 0), minus the command header, are "ping", then highlight the user and say, "Pong!".
   if (message.substring(0,6) == "throw ") {
   	this.respond(poster + " throws " + message.substring(6) + " away.");
   }
