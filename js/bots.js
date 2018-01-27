@@ -12,9 +12,10 @@ outerBot.executeCommand =  function(data) {
   //This code initializes the variables:
   var poster = data.poster;
   var message = data.message;
+  var rawMessage = data.rawMessage;
   var timestamp = data.timestamp;
   var raw_timestamp = data.rawTimestamp;
-  const var versionNum = 1.0;
+  const versionNum = 1.0;
   if (message.substring(0,6) == "throw ") {
   	this.respond(poster + " throws " + message.substring(6) + " away.");
   }
@@ -23,7 +24,7 @@ outerBot.executeCommand =  function(data) {
 	var randSubject = ["product", "service", "idea", "religion", "corporate money grab"];
 	var randNumber1 = Math.floor(Math.random() * 5);
 	var randNumber2 = Math.floor(Math.random() * 5);
-	this.respond(poster + "'s new " + randSubject[randNumber2] + ", " + message.substring(8) + ", is " + randMessage[randNumber1]);
+	this.respond(poster + "'s new " + randSubject[randNumber2] + ", " + rawMessage.substring(9) + ", is " + randMessage[randNumber1]);
   }
   if (message.substring(0, 8) == "destroy ") {
 	this.respond(poster + " destroys " + message.substring(8) + ".");
