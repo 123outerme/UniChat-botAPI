@@ -31,6 +31,7 @@ outerBot.executeCommand =  function(data) {
   }
   if (message.startsWith("setversion ")) {
     outerBot.version = message.substring(11);
+    outerBot.respond("I'm now on version " + outerBot.version);
   }
   if (message.startsWith("setname ")) {
     outerBot.name = message.substring(8);
