@@ -16,20 +16,20 @@ outerBot.executeCommand =  function(data) {
   var timestamp = data.timestamp;
   var raw_timestamp = data.rawTimestamp;
   const versionNum = 1.0;
-  if (message.substring(0,6) == "throw ") {
+  if (message.startsWith("throw ")) {
   	this.respond(poster + " throws " + message.substring(6) + " away.");
   }
-  if (message.substring(0, 8) == "promote ") {
+  if (message.startsWith("promote ")) {
 	var randMessage = ["a thing that exists that you can find.", "absolutely fantastic!", "pitifully mediocre.", "not worthy of this message.", "so perfect it will make you hate reality."];
 	var randSubject = ["product", "service", "idea", "religion", "corporate money grab"];
-	var randNumber1 = Math.floor(Math.random() * 5);
-	var randNumber2 = Math.floor(Math.random() * 5);
+	var randNumber1 = Math.floor(Math.random() * randMessage.length);
+	var randNumber2 = Math.floor(Math.random() * randSubject.length);
 	this.respond(poster + "'s new " + randSubject[randNumber2] + ", " + rawMessage.substring(9) + ", is " + randMessage[randNumber1]);
   }
-  if (message.substring(0, 8) == "destroy ") {
+  if (message.startsWith("destroy ")) {
 	this.respond(poster + " destroys " + message.substring(8) + ".");
   }
-  if (message.substring(0) == "status") {
+  if (message == "status") {
 	this.respond(poster == "123outerme" ? "Welcome back, sir. " : "" + "At version " + versionNum + ", I am fully operational." + (Math.floor(Math.random() * 3) == 1 ? " Probably." : ""));
   }
 
