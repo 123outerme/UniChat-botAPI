@@ -36,7 +36,7 @@ outerBot.executeCommand =  function(data) {
   if (message.startsWith("sarcasm ")) {
     outerBot.respond(poster + " says \"" + rawMessage.substring(8) + "\" sarcastically.");
   }
-  if (message == "infinite") {
+  if (message == "infinite")) {
     outerBot.respond("|infinite");
   }
 }
