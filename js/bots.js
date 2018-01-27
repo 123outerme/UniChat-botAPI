@@ -30,7 +30,7 @@ outerBot.executeCommand =  function(data) {
 	this.respond(poster + " destroys " + message.substring(8) + ".");
   }
   if (message == "status") {
-	this.respond(poster == "123outerme" ? "Welcome back, sir. " : "" + "At version " + versionNum + ", I am fully operational." + (Math.floor(Math.random() * 3) == 1 ? " Probably." : ""));
+	this.respond((poster == "123outerme" ? "Welcome back, sir. " : "") + "At version " + versionNum + ", I am fully operational." + (Math.floor(Math.random() * 3) == 1 ? " Probably." : ""));
   }
 
 }
