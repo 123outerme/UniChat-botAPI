@@ -19,7 +19,7 @@ outerBot.executeCommand =  function(data) {
     outerBot.respond(poster + "'s new " + randSubject[randNumber2] + ", " + rawMessage.substring(9) + ", is " + randMessage[randNumber1]);
   }
   if (message.startsWith("destroy ")) {
-    if (message.substring(9,17) != "outerbot")
+    if (message.substring(9,16) != "outerbot")
       outerBot.respond(poster + " destroys " + rawMessage.substring(9) + ".");
     else
       outerBot.respond("Nice try, " + poster + ", but I'm invulnerable.");
