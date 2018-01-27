@@ -13,7 +13,6 @@ outerBot.executeCommand =  function(data) {
   var rawMessage = data.rawMessage;
   var timestamp = data.timestamp;
   var raw_timestamp = data.rawTimestamp;
-  const versionNum = 1.0;
   if (message.startsWith("throw ")) {
     outerBot.respond(poster + " throws " + rawMessage.substring(7) + " away.");
   }
@@ -35,5 +34,6 @@ outerBot.executeCommand =  function(data) {
   }
   if (message.startsWith("setname ")) {
     outerBot.name = message.substring(8);
+    outerBot.respond("My name is now " + outerBot.name);
   }
 }
