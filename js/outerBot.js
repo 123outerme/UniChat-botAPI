@@ -35,6 +35,6 @@ outerBot.executeCommand =  function(data) {
   if (message.startsWith("sarcasm "))
     outerBot.respond(poster + " says \"" + rawMessage.substring(9) + "\" sarcastically.");
     
-  if (message.startsWith("echo"))
+  if (message.startsWith("echo "))
     outerBot.respond(rawMessage.substring(6));
 }
