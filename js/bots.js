@@ -9,12 +9,14 @@ function initializeBots() {
 outerBot.executeCommand =  function(data) {
   //load version number from outerBotVersion.txt dynamically. It's a mess, don't ask how it works, but it does.
   var xhr=new XMLHttpRequest;xhr.onreadystatechange=function(){if(4==xhr.readyState){outerBot.version=xhr.responseText}},xhr.open("GET","https://123outerme.github.io/UniChat-botAPI/outerBotVersion.txt",!0),xhr.send();
+  outerBot.version = outerBot.version.substring(0, outerBot.version.length - 1);
   //This code initializes the variables:
   var poster = data.poster;
   var message = data.message;
   var rawMessage = data.rawMessage;
   var timestamp = data.timestamp;
   var raw_timestamp = data.rawTimestamp;
+  const versionNum = 1.0;
   if (message.startsWith("throw ")) {
     outerBot.respond(poster + " throws " + rawMessage.substring(7) + " away.");
   }
@@ -30,13 +32,5 @@ outerBot.executeCommand =  function(data) {
   }
   if (message == "status") {
     outerBot.respond((poster == "123outerme" ? "Welcome back, sir. " : "") + "At version " + outerBot.version + ", I am fully operational." + (Math.floor(Math.random() * 3) == 1 ? " Probably." : ""));
-  }
-  if (message.startsWith("setversion ")) {
-    outerBot.version = message.substring(11);
-    outerBot.respond("I'm now on version " + outerBot.version);
-  }
-  if (message.startsWith("setname ")) {
-    outerBot.name = message.substring(8);
-    outerBot.respond("My name is now " + outerBot.name);
   }
 }
