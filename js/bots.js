@@ -27,16 +27,15 @@ outerBot.executeCommand =  function(data) {
     var randNumber2 = Math.floor(Math.random() * randSubject.length);
     outerBot.respond(poster + "'s new " + randSubject[randNumber2] + ", " + rawMessage.substring(9) + ", is " + randMessage[randNumber1]);
   }
-  if (message.startsWith("destroy ")) {
+  if (message.startsWith("destroy "))
     outerBot.respond(poster + " destroys " + rawMessage.substring(9) + ".");
-  }
-  if (message == "status") {
+  
+  if (message == "status")
     outerBot.respond((poster == "123outerme" ? "Welcome back, sir. " : "") + "At version " + outerBot.version + ", I am fully operational." + (Math.floor(Math.random() * 3) == 1 ? " Probably." : ""));
-  }
-  if (message.startsWith("sarcasm ")) {
+  
+  if (message.startsWith("sarcasm "))
     outerBot.respond(poster + " says \"" + rawMessage.substring(8) + "\" sarcastically.");
-  }
-  if (message == "infinite")) {
+  
+  if (message == "infinite")
     outerBot.respond("|infinite");
-  }
 }
