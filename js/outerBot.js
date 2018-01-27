@@ -22,7 +22,11 @@ outerBot.executeCommand =  function(data) {
   if (message.startsWith("destroy ")) {
     outerBot.respond(poster + " destroys " + rawMessage.substring(9) + ".");
   }
-  if (message == "status") {
+  if (message == "status" || message == "version") {
     outerBot.respond((poster == "123outerme" ? "Welcome back, sir. " : "") + "At version " + outerBot.version + ", I am fully operational." + (Math.floor(Math.random() * 3) == 1 ? " Probably." : ""));
+  }
+  
+  if (message.startsWith("sarcasm ")) {
+    outerBot.respond(poster + " says \"" + rawMessage.substring(9) + "\" sarcastically.");
   }
 }
