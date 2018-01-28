@@ -57,6 +57,12 @@ outerBot.executeCommand = function (data) {
 	}
     outerBot.respond("Well " + poster + ", we could " + allOptions);
   }
+	
+  if (message == "analysis") {
+	var allAnalyses = ["it's gone from critical to super-critical", "whoever THAT is is responsible", "it's a mixture of crime-fighting and sleep-walking", "not all heroes wear capes", "I miscalculated by a factor of 100", "we are on the moon", "you forgot your paperwork", "it was just a misunderstanding"];
+	var randNumber = Math.floor(Math.random() * allAnalyses.length);
+	outerBot.respond("Well " + poster + ", it appears that " + allAnalyses[randNumber] + ".");
+  }
 
   if (message.startsWith("destroy ")) {
     if (message.substring(8, 16) == "outerbot")
