@@ -37,7 +37,7 @@ outerBot.executeCommand = function (data) {
   }
 
   if (message.startsWith("options ")) {
-	var options = message.substring(8, 9) - 0;
+	var options = message.substring(8) - 0;
 	if (options > 9)
 	  options = 9;
 	var randOps = ["find a rubber ducky raft", "release the hounds", "strap rockets to a baby carriage", "tuck and roll", "stop, drop, and roll", "replace your kidneys", "execute Order 66", "explode thirteen tons of TNT", "go nuclear", "strategically carpet-bomb every square inch", "enlist at least 450 men, 5 jets, 2 bombers, and 6 tanks", "revert back to trench warfare", "become war profiteers", "repurpose outerBot to fight ninjas", "spam to our hearts delight", "highlight 123outerme", "go into a new chatroom", "PM _iPhoenix_", "actually use some of the message tags", "download the Internet", "throw a segfault error", "exploit Spectre"];
