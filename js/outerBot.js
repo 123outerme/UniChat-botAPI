@@ -29,11 +29,12 @@ outerBot.executeCommand = function (data) {
     outerBot.respond(poster + "'s new " + randSubject[randNumber2] + ", " + rawMessage.substring(9) + ", is " + randMessage[randNumber1]);
   }
 
-  if (message.startsWith("options ")) {
-	var options = message.substring(8) - 0;
+  if (message.startsWith("options")) {
+	message+=" "
+	var options = 1*(message.match(/[1-9]/)?message.match(/[1-9]/)[0]:Math.floor(Math.random()*9));
 	if (options > 9)
 	  options = 9;
-	var randOps = ["find a rubber ducky raft", "release the hounds", "strap rockets to a baby carriage", "tuck and roll", "stop, drop, and roll", "replace your kidneys", "execute Order 66", "explode thirteen tons of TNT", "go nuclear", "strategically carpet-bomb every square inch", "enlist at least 450 men, 5 jets, 2 bombers, and 6 tanks", "revert back to trench warfare", "become war profiteers", "repurpose outerBot to fight ninjas", "spam to our hearts delight", "highlight 123outerme", "go into a new chatroom", "PM _iPhoenix_", "actually use some of the message tags", "download the Internet", "throw a segfault error", "exploit Spectre"];
+	var randOps = ["find a rubber ducky raft", "release the hounds", "strap rockets to a baby carriage", "tuck and roll", "stop, drop, and roll", "replace your kidneys", "execute Order 66", "explode thirteen tons of TNT", "go nuclear", "strategically carpet-bomb every square inch", "enlist at least 450 men, 5 jets, 2 bombers, and 6 tanks", "revert back to trench warfare", "become war profiteers", "repurpose outerBot to fight ninjas", "spam to our hearts delight", "highlight 123outerme", "go into a new chatroom", "PM _iPhoenix_", "actually use some of the message tags", "download the Internet", "throw a segfault error", "exploit Spectre", "create a UniChat bot with the bot API", "create a website", "create a GitHub repo", "start WWIII", "send a tweet", "chase and pursue", "smile and wave"];
 	var allOptions = "";
 	var punct = ".";
 	var i = 0;
