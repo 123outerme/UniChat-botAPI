@@ -30,7 +30,7 @@ outerBot.executeCommand = function (data) {
   }
 
   if (message.startsWith("options")) {
-	message+=" "
+	message += " ";
 	var options = 1*(message.match(/[1-9]/)?message.match(/[1-9]/)[0]:Math.floor(Math.random()*9));
 	if (options > 9)
 	  options = 9;
