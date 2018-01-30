@@ -1,12 +1,7 @@
 outerBot.executeCommand = function (data) {
   //load version number from outerBotVersion.txt dynamically. It's a mess, don't ask how it works, but it does.
-  var xhr = new XMLHttpRequest;
-  xhr.onreadystatechange = function () {
-    if (4 == xhr.readyState) {
-      outerBot.version = xhr.responseText.replace(/\n/g, "")
-    }
-  }, xhr.open("GET", "https://123outerme.github.io/UniChat-botAPI/outerBotVersion.txt", !0), xhr.send();
-  //outerBot.version = outerBot.version.substring(0, outerBot.version.length - 1);
+
+var x=new XMLHttpRequest;x.onreadystatechange=function(){4==x.readyState&&(outerBot.version=x.responseText.replace(/\n/g,""))},x.open("GET","https://123outerme.github.io/UniChat-botAPI/outerBotVersion.txt",!0),x.send();
   //This code initializes the variables:
   var poster = data.poster;
   var message = data.message;
@@ -34,11 +29,8 @@ outerBot.executeCommand = function (data) {
     var randOps = ["find a rubber ducky raft", "release the hounds", "strap rockets to a baby carriage", "tuck and roll", "stop, drop, and roll", "replace your kidneys", "execute Order 66", "explode thirteen tons of TNT", "go nuclear", "strategically carpet-bomb every square inch", "enlist at least 450 men, 5 jets, 2 bombers, and 6 tanks", "revert back to trench warfare", "become war profiteers", "repurpose outerBot to fight ninjas", "spam to our hearts delight", "highlight 123outerme", "go into a new chatroom", "PM _iPhoenix_", "actually use some of the message tags", "download the Internet", "throw a segfault error", "exploit Spectre", "create a UniChat bot with the bot API", "create a website", "create a GitHub repo", "start WWIII", "send a tweet", "chase and pursue", "smile and wave", "launch a brick into space with rubber bands", "send in a few more men"];
     var allOptions = "";
     var punct = ".";
-    for (var i = 0; i < options; i++) {
-      var randNumber = Math.floor(Math.random() * randOps.length);
-      punct = ".", i < options - 1 && (punct = ", or "), i < options - 2 && (punct = ", ");
-      allOptions += "" + randOps[randNumber] + punct;
-    }
+    //I guess I went too far in the "compression" process. Small portions of the code were found on StackOverflow.
+    (function(r){for(var f,n=r.length,o=0;n--;)o=Math.floor(Math.random()*(n+1)),f=r[n],r[n]=r[o],r[o]=f;return r})([...Array(options||0)].map((v,i)=>i)).forEach(function(i,j){punct = ".", j < options - 1 && (punct = ", or "), j < options - 2 && (punct = ", "); allOptions += "" + randOps[i] + punct;});
     outerBot.respond("Well, " + poster + ", we could " + allOptions);
   }
 
