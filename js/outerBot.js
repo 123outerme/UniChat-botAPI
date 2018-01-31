@@ -16,7 +16,7 @@ var x=new XMLHttpRequest;x.onreadystatechange=function(){4==x.readyState&&(outer
     }
   }
   if (message.startsWith("promote ")) {
-    var randMessage = ["a thing that exists that you can find.", "absolutely fantastic!", "pitifully mediocre.", "not worthy of this message.", "so perfect it will make you hate reality.", "basically the reason WWIII was started.", "probably taking candy from babies.", "acceptable.", "what your entire life has been leading up to." + "the best thing around town.", "worse than expected", "currently in a huge fireball on the launch pad", "even more mediocre than UniChat"];
+    var randMessage = ["a thing that exists that you can find.", "absolutely fantastic!", "pitifully mediocre.", "not worthy of this message.", "so perfect it will make you hate reality.", "basically the reason WWIII was started.", "probably taking candy from babies.", "acceptable.", "what your entire life has been leading up to.", "the best thing around town.", "worse than expected.", "currently in a huge fireball on the launch pad.", "even more mediocre than UniChat."];
     var randSubject = ["product", "service", "idea", "religion", "corporate money grab", "non-corporeal entity", "sense of pride and accomplishment"];
     var randNumber1 = Math.floor(Math.random() * randMessage.length);
     var randNumber2 = Math.floor(Math.random() * randSubject.length);
